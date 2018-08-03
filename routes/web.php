@@ -20,3 +20,12 @@ Route::get('/a', function () {
 });
 
 Route::get('/mycms' , 'Cms@test');
+
+Route::get('/hello' , 'Cms@index');
+
+Route::get('/userslist' , 'Cms@userlist');
+Route::get('/usersadd', 'Cms@useradd');
+Route::post('/usersadd_do', 'Cms@useradd_do');
+Route::get('/deluser' , 'Cms@userdel');
+Route::get('/modifyuser' , 'Cms@updateuser');
+Route::post('/usersmodify_do' , 'Cms@usermodify_do');
