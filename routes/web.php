@@ -16,13 +16,21 @@ Route::get('/mycms' , 'Cms@test');
 
 Route::get('/hello' , 'Cms@index');
 
-
 Route::get('/userslist' , 'Cms@userlist');
 Route::get('/usersadd', 'Cms@useradd');
 Route::post('/usersadd_do', 'Cms@useradd_do');
 Route::get('/deluser' , 'Cms@userdel');
 Route::get('/modifyuser' , 'Cms@updateuser');
 Route::post('/usersmodify_do' , 'Cms@usermodify_do');
+
+/* 后台登陆 */
+Route::get('/home/login' , 'Home\LoginController@login');
+Route::post('/home/login_do' , 'Home\LoginController@login_do');
+
+/* 后台首页 */
+Route::get('/home/index' , 'home\IndexController@index');
+Route::get('/home/welcome' , 'Home\IndexController@welcome');
+
 /* 后台类别管理 */
 Route::get('/typeadd' , 'Home\TypeController@typeadd');
 Route::post('/typeadd_do' , 'Home\TypeController@typeadd_do');

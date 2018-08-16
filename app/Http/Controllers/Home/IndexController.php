@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller{
     //
+
+
+    public function index(){
+        return view('home.index' , ['title'=>'后台首页']);
+    }
+
+    public function welcome(){
+        return view('home.welcome');
+    }
+
     public function statistics(){
         $start = strtotime(date("Y-m-d") , time());
         $end = $start+60*60*24;

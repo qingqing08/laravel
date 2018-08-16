@@ -85,7 +85,9 @@
 				cache:false,
 				async:false,
 				success:function (msg){
-					$('#city').html(msg.data);
+					var str = "<option value='0'>请选择</option>";
+					$('#city').html(str+msg.data);
+					$('#county').html(str);
 				}
 			})
 		}
