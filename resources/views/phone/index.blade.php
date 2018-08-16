@@ -6,19 +6,19 @@
     <title>首页</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <script src="/js/rem.js"></script>
-    <link href="/iconfont/iconfont.css" rel="stylesheet">
-    <link href="/css/mui.min.css" rel="stylesheet">
-    <link href="/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <script src="js/rem.js"></script>
+    <link href="iconfont/iconfont.css" rel="stylesheet">
+    <link href="css/mui.min.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav" id="header">
     <div class="top-sch-box flex-col">
         <div class="centerflex">
             <i class="fdj iconfont icon-search"></i>
-            <div class="sch-txt">连衣裙就是你的女人味儿</div>
+            <div class="sch-txt">说出你想要的吧</div>
             <span class="shaomiao"><i class="iconfont icon-saoma"></i></span>
         </div>
     </div>
@@ -74,99 +74,22 @@
     <div class="mui-content">
         <div class="banner swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/uploads/banner1.jpg" alt=""></a></div>
-                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/uploads/banner1.jpg" alt=""></a></div>
-                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/uploads/banner1.jpg" alt=""></a></div>
-                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/uploads/banner1.jpg" alt=""></a></div>
+                @foreach($bannerlist as $banner)
+                <div class="swiper-slide"><a href="javascript:void({{ $banner->id }})"><img class="swiper-lazy" data-src="{{ $banner->image_url }}" alt=""></a></div>
+                @endforeach
             </div>
             <div class="swiper-pagination"></div>
         </div>
 
-        <div class="home-nav ui-box">
-            <div class="ui-flex flex-justify-sb">
-                <div><a href=""><img src="/img/homenav1.png" alt="" /></a></div>
-                <div><a href=""><img src="/img/homenav2.png" alt="" /></a></div>
-                <div><a href=""><img src="/img/homenav3.png" alt="" /></a></div>
-                <div><a href=""><img src="/img/homenav4.png" alt="" /></a></div>
-            </div>
-        </div>
-
-        <div class="home-qnav ui-box">
-            <div class="ui-flex flex-justify-sb">
-                <div><a href="http://www.591zq.com"><img src="/img/qnav1.png" class="ico" /><span class="name">我的店铺</span></a></div>
-                <div><a href="http://www.591zq.com"><img src="/img/qnav2.png" class="ico" /><span class="name">招商加盟</span></a></div>
-                <div><a href="http://www.591zq.com"><img src="/img/qnav3.png" class="ico" /><span class="name">我的喜欢</span></a></div>
-                <div><a href="http://www.591zq.com"><img src="/img/qnav4.png" class="ico" /><span class="name">猜你喜欢</span></a></div>
-            </div>
-        </div>
-
-        <div class="home-newgoods ui-box">
-            <img class="home-imgtit" src="/img/hometit1.jpg" alt="" />
-            <div class="list-type1 plist-puzzle">
-                <a class="b" href=""><img src="/uploads/t1.jpg" alt="" /></a>
-                <div class="s ui-flex-vt flex-justify-sb">
-                    <a class="box" href=""><img src="/uploads/t2.jpg" alt="" /></a>
-                    <a class="box" href=""><img src="/uploads/t2.jpg" alt="" /></a>
-                    <a class="box" href=""><img src="/uploads/t2.jpg" alt="" /></a>
-                </div>
-            </div>
-            <img class="home-imgtit" src="/img/hometit2.jpg" alt="" />
-            <div class="list-type2 ui-flex flex-justify-sb">
-                <a class="box" href=""><img class="figure" src="/uploads/t3.jpg" alt="" /><span class="tit">情侣穿搭</span></a>
-                <a class="box" href=""><img class="figure" src="/uploads/t3.jpg" alt="" /><span class="tit">约会美搭</span></a>
-                <a class="box" href=""><img class="figure" src="/uploads/t3.jpg" alt="" /><span class="tit">全部新款</span></a>
-            </div>
-        </div>
-
         <div class="home-fashion ui-box ui-border-t">
-            <img class="home-imgtit" src="/img/hometit3.jpg" alt="" />
-            <a href=""><img class="db margin-b-s" src="/uploads/t4.jpg" width="100%" alt="" /></a>
             <div class="fastion-plist mui-row">
+                @foreach($goodslist as $goods)
                 <div class="mui-col-xs-4">
-                    <a class="item">
-                        <img src="/uploads/t5.jpg" alt="" class="figure" /><span class="tit">印花卫衣</span>
+                    <a class="item" href="detail?id={{ $goods->id }}">
+                        <img src="{{ $goods->image_url }}" alt="" class="figure" /><span class="tit">{{ $goods->name }}</span>
                     </a>
                 </div>
-                <div class="mui-col-xs-4">
-                    <a class="item">
-                        <img src="/uploads/t5.jpg" alt="" class="figure" /><span class="tit">印花卫衣</span>
-                    </a>
-                </div>
-                <div class="mui-col-xs-4">
-                    <a class="item">
-                        <img src="/uploads/t5.jpg" alt="" class="figure" /><span class="tit">印花卫衣</span>
-                    </a>
-                </div>
-                <div class="mui-col-xs-4">
-                    <a class="item">
-                        <img src="/uploads/t5.jpg" alt="" class="figure" /><span class="tit">印花卫衣</span>
-                    </a>
-                </div>
-                <div class="mui-col-xs-4">
-                    <a class="item">
-                        <img src="/uploads/t5.jpg" alt="" class="figure" /><span class="tit">印花卫衣</span>
-                    </a>
-                </div>
-                <div class="mui-col-xs-4">
-                    <a class="item">
-                        <img src="/uploads/t5.jpg" alt="" class="figure" /><span class="tit">印花卫衣</span>
-                    </a>
-                </div>
-                <div class="mui-col-xs-4">
-                    <a class="item">
-                        <img src="/uploads/t5.jpg" alt="" class="figure" /><span class="tit">印花卫衣</span>
-                    </a>
-                </div>
-                <div class="mui-col-xs-4">
-                    <a class="item">
-                        <img src="/uploads/t5.jpg" alt="" class="figure" /><span class="tit">印花卫衣</span>
-                    </a>
-                </div>
-                <div class="mui-col-xs-4">
-                    <a class="item">
-                        <img src="/uploads/t5.jpg" alt="" class="figure" /><span class="tit">印花卫衣</span>
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
     </div> <!--mui-content end-->
@@ -175,15 +98,15 @@
 @extends('layouts.footer');
 
 </body>
-<script type="text/javascript" src="/js/jquery-1.8.3.min.js" ></script>
-<script src="/js/fastclick.js"></script>
-<script src="/js/mui.min.js"></script>
-<script type="text/javascript" src="/js/hmt.js" ></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script src="js/fastclick.js"></script>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/hmt.js" ></script>
 <!--插件-->
-<link rel="stylesheet" href="/js/swiper/swiper.min.css">
-<script src="/js/swiper/swiper.jquery.min.js"></script>
+<link rel="stylesheet" href="js/swiper/swiper.min.css">
+<script src="js/swiper/swiper.jquery.min.js"></script>
 <!--插件-->
-<script src="/js/global.js"></script>
+<script src="js/global.js"></script>
 <script >
     $(function () {
         var banner = new Swiper('.banner',{

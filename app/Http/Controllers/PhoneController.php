@@ -15,7 +15,7 @@ class PhoneController extends Controller{
     }
 
     public function self(){
-        return view('phone.self' , ['title'=>'个人中心']);
+        return view('phone.self' , ['title'=>'个人中心' , 'action_name'=>'self']);
     }
 
     public function login(){
